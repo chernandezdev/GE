@@ -36,10 +36,7 @@ namespace webCrawler
         public static List<string> GetAddresses(Internet internet)
         {
             List<string> ValidAdresses = new List<string>();
-            foreach (var website in internet.pages)
-            {
-                ValidAdresses.Add(website.address);
-            }
+            ValidAdresses = internet.pages.Select(x => x.address).ToList();
 
             return ValidAdresses;
 
